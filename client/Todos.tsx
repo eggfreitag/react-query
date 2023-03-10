@@ -37,6 +37,16 @@ const Todos = () => {
     }
   };
 
+  const get = async () => {
+    try {
+      const res = await axios.get("http://localhost:3000/");
+
+      console.log(res.data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   // Access the client
   const queryClient = useQueryClient();
 
@@ -62,10 +72,11 @@ const Todos = () => {
 
       <Button
         onPress={() => {
-          mutation.mutate({
-            id: Date.now(),
-            title: "Do Laundry",
-          });
+          // mutation.mutate({
+          //   id: Date.now(),
+          //   title: "Do Laundry",
+          // });
+          get();
         }}
         title={"Add Todo"}
       />
