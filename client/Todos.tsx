@@ -1,16 +1,16 @@
 import React from "react";
+import axios from "axios";
 import { Alert, Button, StyleSheet, Text, View } from "react-native";
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 
 const Todos = () => {
   const getTodos = async () => {
     try {
-      const response = await fetch(
+      const response = await axios.get(
         "https://jsonplaceholder.typicode.com/todos"
       );
-      const data = await response.json();
-
-      return data;
+      console.log(response.data);
+      return response.data;
     } catch (error) {
       Alert.alert("Error", error.message);
     }
