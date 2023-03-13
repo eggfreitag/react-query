@@ -18,9 +18,11 @@ const suspenseOption = {
 const Users = () => {
   const {
     data: { data },
-  } = useQuery<{ data: User[] }, Error>(["users"], fetchUsers, suspenseOption);
+  } = useQuery<{ data: User[] }, Error>(["users"], fetchUsers, {
+    ...suspenseOption,
+    cacheTime: 10000, // 10초간 캐시를 사용, 10초가 지나면 재요청
+  });
 
-  console.log(data);
   return (
     <View style={{ flex: 1, backgroundColor: "silver" }}>
       <ScrollView style={{ flex: 1 }}>
