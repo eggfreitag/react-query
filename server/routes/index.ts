@@ -3,7 +3,9 @@ import express from "express";
 const router = express.Router();
 
 router.get("/", (req, res, next) => {
-  res.send("Hello World!");
+  setTimeout(() => {
+    return res.send("Hello World!");
+  }, 3000);
 });
 
 export default router;

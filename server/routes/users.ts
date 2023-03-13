@@ -5,7 +5,9 @@ import mock from "../mock_large.json";
 const router = express.Router();
 
 router.get("/", function (req, res, next) {
-  res.send(mock);
+  setTimeout(() => {
+    return res.send(mock);
+  }, 3000);
 });
 
 export default router;

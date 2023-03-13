@@ -1,14 +1,17 @@
 import React from "react";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { NavigationContainer } from "@react-navigation/native";
+import { QueryClientProvider, QueryClient } from "@tanstack/react-query";
 
-import Home from "./Home";
+import MasterNav from "./src/Navigators/MasterNav";
 
 const queryClient = new QueryClient();
 
 export default function App() {
   return (
     <QueryClientProvider client={queryClient}>
-      <Home />
+      <NavigationContainer>
+        <MasterNav />
+      </NavigationContainer>
     </QueryClientProvider>
   );
 }
