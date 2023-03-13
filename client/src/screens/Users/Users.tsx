@@ -20,6 +20,7 @@ const Users = () => {
     data: { data },
   } = useQuery<{ data: User[] }, Error>(["users"], fetchUsers, suspenseOption);
 
+  console.log(data);
   return (
     <View style={{ flex: 1, backgroundColor: "silver" }}>
       <ScrollView style={{ flex: 1 }}>

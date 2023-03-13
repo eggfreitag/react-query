@@ -5,7 +5,10 @@ import { NativeStackScreenProps } from "@react-navigation/native-stack";
 
 import { RootStackParamList } from "../../navigators/MasterNav";
 
-const animations = [{ screen: "Users", title: "🙈 Users" }] as const;
+const animations = [
+  { screen: "Users", title: "🙈 Users" },
+  { screen: "TraditionalUsers", title: "🙈 Traditional Users" },
+] as const;
 
 type Props = NativeStackScreenProps<RootStackParamList, "Home">;
 

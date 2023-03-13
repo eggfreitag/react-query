@@ -6,8 +6,9 @@ const router = express.Router();
 
 router.get("/", function (req, res, next) {
   setTimeout(() => {
-    return res.status(404).send("Not Found");
-  }, 3000);
+    return res.send(mock);
+    // return res.status(404).send("Error has occurred");
+  }, 1000);
 });
 
 export default router;
