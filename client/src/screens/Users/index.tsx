@@ -1,1 +1,4 @@
-export { default } from "./Users";
+import Users from "./Users";
+import withErrorBoundary from "../../hooks/withErrorBoundary";
+
+export default withErrorBoundary(Users);

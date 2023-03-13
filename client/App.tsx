@@ -6,7 +6,7 @@ import MasterNav from "./src/Navigators/MasterNav";
 
 const queryClient = new QueryClient();
 
-export default function App() {
+const App = () => {
   return (
     <QueryClientProvider client={queryClient}>
       <NavigationContainer>
@@ -14,4 +14,6 @@ export default function App() {
       </NavigationContainer>
     </QueryClientProvider>
   );
-}
+};
+
+export default App;
