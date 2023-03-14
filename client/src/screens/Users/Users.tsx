@@ -20,7 +20,8 @@ const Users = () => {
     data: { data },
   } = useQuery<{ data: User[] }, Error>(["users"], fetchUsers, {
     ...suspenseOption,
-    cacheTime: 10000, // 10초간 캐시를 사용, 10초가 지나면 재요청
+    // cacheTime: 10000, // 10초간 캐시를 사용, 10초가 지나면 재요청 (default: 5분)
+    // staleTime: 10000, // 캐시된 데이터가 만료되기 전에 사용할 수 있는 시간, staleTime이 지나면 재요청 (default: 0)
   });
 
   return (
